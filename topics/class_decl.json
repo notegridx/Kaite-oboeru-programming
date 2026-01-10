@@ -1,0 +1,16 @@
+{
+  "id": "class_decl",
+  "title": "クラス宣言",
+  "questions": [
+    {
+      "id": "class-basic",
+      "description": "この問題では、Javaプログラムの最も基本的な形（クラス + mainメソッド）を確認します。\n\nまず、HelloWorld という名前のクラスを宣言します。Javaでは、プログラムはクラスの中に書き、実行は main メソッドから始まります（main は「最初に呼び出される特別なメソッド」です）。\n\nmain メソッドの中では System.out.println(...) を使って、コンソールに文字列を出力します。このコードを実行すると「Hello, Java!」と表示されます。\n\nタイピングのポイントは、public class / public static void main(String[] args) / println の括弧やセミコロンなど、基本構文を正確に書けるようになることです。",
+      "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, Java!\");\n    }\n}"
+    },
+    {
+      "id": "class-field",
+      "description": "この問題では、クラスの中に「フィールド（インスタンス変数）」を持たせる基本形を確認します。\n\nUser というクラスを作り、その中に name（文字列）と age（数値）を定義します。これらは「Userというデータが持つ属性（状態）」を表すための変数で、クラスのブロック直下に宣言される点がポイントです。\n\nこのコード単体ではまだ画面表示や実行結果はありませんが、後続の学習で new User() によってオブジェクトを作り、user.name や user.age のように値を保持させる土台になります。\n\nタイピングのポイントは、型（String / int）と変数名、そして各行末のセミコロンを確実に押さえることです。",
+      "code": "class User {\n    String name;\n    int age;\n}"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>書いて覚えるプログラミング</title>
+  <meta name="description" content="構文を自分で書けるようになることから始める、プログラミング学習サービス。" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <h1 class="brand__title">書いて覚えるプログラミング</h1>
+        <p class="brand__subtitle">構文を自分で書けるようになることから始める、プログラミング学習</p>
+      </div>
+
+      <div class="controls" aria-label="学習操作">
+        <label class="sr-only" for="topicSelect">トピック選択</label>
+        <select id="topicSelect" class="control control--select"></select>
+
+        <button id="restartBtn" class="control control--button" type="button">
+          この問題を最初から
+        </button>
+
+        <button id="nextBtn" class="control control--button" type="button" disabled>
+          次の問題へ
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <p class="site-guide">
+        はじめての方は <a href="./about.html">このサイトについて</a> や
+        <a href="./how-to-use.html">使い方</a> をご覧ください。
+        運営情報やプライバシー方針は
+        <a href="./privacy.html">プライバシーポリシー</a> に記載しています。
+      </p>
+
+      <section class="panel" aria-label="タイピング練習">
+        <div class="panel__top">
+          <div class="topic">
+            <div class="topic__title" id="topicTitle"></div>
+            <div class="topic__meta" id="topicMeta"></div>
+          </div>
+
+          <div class="status" aria-label="学習状況">
+            <span class="pill">問題: <b id="progress">0</b>/<b id="total">0</b></span>
+          </div>
+        </div>
+
+        <div class="description" id="questionDescription"></div>
+
+        <div class="typing" id="typingView" aria-live="polite"></div>
+        <div class="message" id="messageArea" aria-live="polite"></div>
+
+        <p class="hintline">
+          ヒント: 間違えても大丈夫です。正しい構文の形を、手で覚えることが目的です。
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer" aria-label="サイト情報">
+      <nav class="footer__nav">
+        <a href="./index.html">トップ</a>
+        <a href="./about.html">このサイトについて</a>
+        <a href="./how-to-use.html">使い方</a>
+        <a href="./privacy.html">プライバシーポリシー</a>
+        <a href="./contact.html">お問い合わせ</a>
+      </nav>
+      <p class="footer__copy">© notegridx</p>
+    </footer>
+  </div>
+
+  <!-- キー入力を安定して受け取るための不可視 input（常にフォーカスされる） -->
+  <input id="typeInput" autocomplete="off" spellcheck="false" />
+
+  <script src="./app.js"></script>
+</body>
+
+</html>

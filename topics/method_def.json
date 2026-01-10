@@ -1,0 +1,16 @@
+{
+  "id": "method_def",
+  "title": "メソッド定義",
+  "questions": [
+    {
+      "id": "method-basic",
+      "description": "この問題では、引数を2つ受け取り、計算結果を戻すメソッドの基本形を確認します。\n\nint add(int a, int b) は「戻り値の型が int」「メソッド名が add」「引数が (int a, int b)」であることを表します。return a + b; により計算結果が呼び出し元へ返されます。\n\nタイピングのポイントは、戻り値の型→メソッド名→引数リスト→波括弧→return文→セミコロン、という一連の構造を崩さずに書くことです。",
+      "code": "int add(int a, int b) {\n    return a + b;\n}"
+    },
+    {
+      "id": "method-void-print",
+      "description": "この問題では、戻り値がない（void）メソッドの基本形を確認します。\n\nvoid printHello() は値を返さず、処理だけを行うメソッドです。ここでは System.out.println(...) を呼び出して文字列を表示します。\n\nタイピングのポイントは、void の意味（戻り値なし）と、return が不要なこと、println の括弧とダブルクォート、セミコロンを正確に書くことです。",
+      "code": "void printHello() {\n    System.out.println(\"Hello!\");\n}"
+    }
+  ]
+}

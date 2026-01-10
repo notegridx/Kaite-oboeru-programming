@@ -1,0 +1,377 @@
+/* =========================================================
+   Theme
+   ========================================================= */
+:root {
+    --bg: #10162a;
+    --card: rgba(18, 26, 51, 0.92);
+    --text: #d6dcf5;
+
+    --muted: rgba(232, 236, 255, 0.55);
+    --muted2: rgba(232, 236, 255, 0.35);
+    --line: rgba(255, 255, 255, 0.10);
+
+    --ok: #6ee7b7;
+    --bad: #fb7185;
+    --accent: #93c5fd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   Layout
+   ========================================================= */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+    background: radial-gradient(1200px 800px at 20% 10%, #16214a, var(--bg));
+    color: var(--text);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+}
+
+.app {
+    width: min(980px, 100%);
+    background: var(--card);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.header {
+    padding: 18px 18px 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--line);
+}
+
+.main {
+    padding: 16px;
+}
+
+.panel {
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* =========================================================
+   Brand / Controls
+   ========================================================= */
+.brand__title {
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+
+.brand__subtitle {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+    max-width: 56ch;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.control {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 9px 10px;
+    height: 40px;
+}
+
+.control--select {
+    min-width: 220px;
+}
+
+.control--button {
+    cursor: pointer;
+    padding-inline: 12px;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.control--button:hover {
+    border-color: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+#nextBtn:not(:disabled) {
+    border-color: rgba(110, 231, 183, 0.35);
+}
+
+/* =========================================================
+   Practice UI
+   ========================================================= */
+.panel__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.topic {
+    display: grid;
+    gap: 4px;
+}
+
+.topic__title {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+}
+
+.topic__meta {
+    font-size: 12px;
+    color: var(--muted2);
+}
+
+.status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.pill {
+    font-size: 12px;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    padding: 6px 10px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* 説明文は「読み物」なので、改行を活かして読みやすくする */
+.description {
+    margin: 0 0 12px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid var(--accent);
+    border-radius: 12px;
+    color: rgba(232, 236, 255, 0.65);
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+.typing {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 14px;
+    padding: 14px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    white-space: pre-wrap;
+    min-height: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.done {
+    color: var(--text);
+}
+
+.next {
+    color: var(--muted2);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.28);
+}
+
+.caret {
+    display: none;
+}
+
+.hintline {
+    margin: 10px 2px 0;
+    font-size: 12px;
+    color: var(--muted2);
+    line-height: 1.6;
+}
+
+/* 完了メッセージ等、UIテキストはコード領域の外に出す */
+.message {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    color: rgba(232, 236, 255, 0.65);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.message:empty {
+    display: none;
+}
+
+.message--done {
+    border-left: 4px solid var(--ok);
+}
+
+/* =========================================================
+   Hidden input
+   ========================================================= */
+#typeInput {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.footer {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.footer__nav {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.footer__nav a {
+    color: rgba(232, 236, 255, 0.65);
+    text-decoration: none;
+}
+
+.footer__nav a:hover {
+    text-decoration: underline;
+}
+
+.footer__copy {
+    font-size: 11px;
+    color: rgba(232, 236, 255, 0.45);
+}
+
+/* =========================================================
+   Text pages (About / Privacy / How-to-use / Contact)
+   ========================================================= */
+.page .main {
+    padding: 18px;
+}
+
+.page .panel {
+    padding: 18px;
+}
+
+.page .panel h2 {
+    margin: 18px 0 10px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    color: rgba(232, 236, 255, 0.82);
+}
+
+.page .panel h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.page .panel p {
+    margin: 10px 0;
+    line-height: 1.9;
+    color: rgba(232, 236, 255, 0.72);
+}
+
+.page .panel ul,
+.page .panel ol {
+    margin: 10px 0 12px;
+    padding-left: 1.25em;
+    color: rgba(232, 236, 255, 0.72);
+}
+
+.page .panel li {
+    margin: 6px 0;
+    line-height: 1.8;
+}
+
+.page .panel a {
+    color: rgba(147, 197, 253, 0.9);
+    text-decoration: none;
+}
+
+.page .panel a:hover {
+    text-decoration: underline;
+}
+
+.page .panel strong {
+    color: rgba(232, 236, 255, 0.88);
+}
+
+.page .panel code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.95em;
+    padding: 0.15em 0.35em;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* トップページ案内 */
+.site-guide {
+    margin: 0 0 12px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(232, 236, 255, 0.65);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.site-guide a {
+    color: rgba(147, 197, 253, 0.9);
+    text-decoration: none;
+}
+
+.site-guide a:hover {
+    text-decoration: underline;
+}
+
+/* screen-reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+#questionDescription {
+    line-height: 1.5;
+    font-size: 12px;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,16 @@
+{
+  "id": "enhanced_for",
+  "title": "拡張for文",
+  "questions": [
+    {
+      "id": "for-each",
+      "description": "この問題では、拡張for文（for-each）の基本形を確認します。\n\nfor (int n : numbers) は「numbers の各要素を順番に取り出して n に代入し、ブロック内を繰り返す」という意味です。添字を使わずに全要素を処理できるので、読みやすくミスが減ります。\n\nタイピングのポイントは、(型 変数 : 配列/コレクション) の形、コロン : の位置、波括弧{}の対応、println の括弧とセミコロンです。",
+      "code": "for (int n : numbers) {\n    System.out.println(n);\n}"
+    },
+    {
+      "id": "for-each-sum",
+      "description": "この問題では、拡張for文を使って合計値を計算するパターンを確認します。\n\nsum を 0 で初期化し、for-each で各要素を取り出して sum += n; と加算していきます。繰り返しの典型的な用途（集計）として頻出です。\n\nタイピングのポイントは、sum += n; の複合代入演算子、変数宣言と初期化、波括弧の閉じ忘れを防ぐことです。",
+      "code": "int sum = 0;\n\nfor (int n : numbers) {\n    sum += n;\n}\n\nSystem.out.println(sum);"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[
+  { "id": "class_decl", "title": "クラス宣言" },
+  { "id": "array_init", "title": "配列初期化" },
+  { "id": "enhanced_for", "title": "拡張for文" },
+  { "id": "method_def", "title": "メソッド定義" }
+]
