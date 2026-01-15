@@ -100,6 +100,32 @@ body {
     min-width: 220px;
 }
 
+/* ====================================================
+   Windowsブラウザでの<select>の視認性改善（白背景化対策）
+   ==================================================== */
+
+#topicSelect.control--select,
+select.control.control--select {
+  /* セレクタ本体の背景・文字色を強制 */
+  background-color: #0f1733;      /* 黒系（サイトのトーンに合わせた濃紺） */
+  color: var(--text);
+
+  /* ブラウザにダークフォームとして扱わせる（Windowsで効きやすい） */
+  color-scheme: dark;
+
+  /* 透明背景だと白化が目立つことがあるので無効化 */
+  background-image: none;
+}
+
+/* ドロップダウン側（option一覧）も暗色に寄せる */
+#topicSelect option,
+#topicSelect optgroup,
+select.control.control--select option,
+select.control.control--select optgroup {
+  background-color: #0f1733;
+  color: var(--text);
+}
+
 .control--button {
     cursor: pointer;
     padding-inline: 12px;
