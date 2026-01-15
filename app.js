@@ -164,7 +164,7 @@ function setQuestion(index) {
 
     // 次へ待ちを解除
     state.isReadyForNext = false;
-    if (els.nextBtn) els.nextBtn.disabled = true;
+    if (els.nextBtn) els.nextBtn.disabled = false;
 
     setMessage("");
     renderTypingView();
@@ -281,7 +281,7 @@ window.addEventListener("focus", () => ensureFocus());
 
 if (els.nextBtn) {
     els.nextBtn.addEventListener("click", () => {
-        if (!state.isReadyForNext) return;
+        // if (!state.isReadyForNext) return;
         goNextQuestion();
     });
 }
